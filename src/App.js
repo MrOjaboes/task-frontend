@@ -1,7 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import * as React from "react";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import BookList from './components/list.component';
+import CreateBook from './components/createbook.component';
+import EditBook from './components/editbook.component';
+import { Link, BrowserRouter as Router,Routes,Route } from "react-router-dom";
 function App() {
   return (
     <Router>
@@ -9,12 +11,17 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="">BookList</Link>
+              <Link to="/">BookList</Link>
+            </li>
+            <li>
+              <Link to="create-book">Create Book</Link>
             </li>
           </ul>
         </nav>
         <Routes>
-           <Route path="/" element={}/>
+           <Route path="/" element={<BookList/>} />
+           <Route path="/create-book" element={<CreateBook/>} />
+           <Route path="/book/edit/:id" element={<EditBook/>} />
          </Routes>;
       </div>
     </Router>
