@@ -10,7 +10,7 @@ class BookList extends React.Component {
       books: [],
     };
   }
-
+  
   deleteBook(id) {
     console.log(id);
     fetch(`http://127.0.0.1:8000/api/books/delete/`+ id, {
@@ -28,6 +28,7 @@ class BookList extends React.Component {
           console.log(error);
         }
       );
+      window.location().reload(true);
   }
 
   componentDidMount() {

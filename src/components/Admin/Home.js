@@ -1,7 +1,7 @@
  
 import React from "react";
 import { Link } from "react-router-dom";
-import MenuLink from "./MenuLink";
+ 
 class Home extends React.Component {
     constructor(props) {
       super(props);
@@ -62,8 +62,8 @@ class Home extends React.Component {
       } else {
     return (
 <div className="container pt-5">
-    <MenuLink />
-        <div className='row pt-5'>
+    
+        <div className='row pt-2'>
 <div className='col-md-12'>
 <div className='card p-0'>
 <div className='card-body'>    
@@ -81,7 +81,7 @@ class Home extends React.Component {
                 <td>{task.title}</td>                 
                 <td>
                   <button className="btn btn-success">
-                    <Link to={{pathname:"/book/edit/"+task.id }} className="text-white">Edit</Link>
+                    <Link to={{pathname:"/task/edit/"+task.id }} className="text-white">Edit</Link>
                   </button>
                  &nbsp;
                   <button className="btn btn-danger text-white" onClick={() => this.deleteBook(task.id)}>

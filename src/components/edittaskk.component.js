@@ -1,6 +1,7 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import MenuLink from "./Admin/MenuLink";
+ 
 
  
 const EditTask = () => {
@@ -51,11 +52,10 @@ const handleSubmit =(event)=> {
       }
     );
     event.preventDefault();
-    navigate('/admin'); 
+    navigate('/'); 
 }
 return (
-  <div className="container pt-3">
-      <MenuLink/>
+  <div className="container pt-3">    
       <div className="row pt-5">
            <div className="col-md-3"></div>
            <div className="col-md-6">
