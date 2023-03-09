@@ -1,27 +1,24 @@
 import './App.css';
 import * as React from "react";
 import BookList from './components/list.component';
-import CreateBook from './components/createbook.component';
-import EditBook from './components/editbook.component';
-import { Link, BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import CreateTask from './components/createtask.component';
+import EditTask from './components/edittaskk.component';
+import BookPage from './components/Landing';
+import Admin from './components/Admin/Home';
+ 
+//import Home from './components/Admin/Home';
+import {  BrowserRouter as Router,Routes,Route } from "react-router-dom";
 function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">BookList</Link>
-            </li>
-            <li>
-              <Link to="create-book">Create Book</Link>
-            </li>
-          </ul>
-        </nav>
+      
         <Routes>
-           <Route path="/" element={<BookList/>} />
-           <Route path="/create-book" element={<CreateBook/>} />
-           <Route path="/book/edit/:id" element={<EditBook/>} />
+           <Route path="/" element={<BookPage/>} />
+           <Route path="/books" element={<BookList/>} />
+           <Route path="/admin" element={<Admin/>} />           
+           <Route path="/create-task" element={<CreateTask/>} />
+           <Route path="/book/edit/:id" element={<EditTask/>} />
          </Routes>;
       </div>
     </Router>
